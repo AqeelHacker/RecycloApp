@@ -8,7 +8,8 @@ class RegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
-    final TextEditingController confirmPasswordController = TextEditingController();
+    final TextEditingController confirmPasswordController =
+        TextEditingController();
 
     return Scaffold(
       body: Container(
@@ -29,7 +30,8 @@ class RegisterPage extends StatelessWidget {
                 // Logo
                 Image.asset(
                   'assets/logo.png',
-                  height: 80,
+                  height: MediaQuery.of(context).size.height *
+                      0.08, // 8% dari tinggi layar
                 ),
                 const SizedBox(height: 100),
 
@@ -48,7 +50,8 @@ class RegisterPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                   child: Column(
                     children: [
                       const Text(
@@ -59,7 +62,6 @@ class RegisterPage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 32),
-
                       TextFormField(
                         controller: emailController,
                         decoration: InputDecoration(
@@ -68,12 +70,12 @@ class RegisterPage extends StatelessWidget {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+                          contentPadding: const EdgeInsets.symmetric(
+                              vertical: 16, horizontal: 20),
                         ),
                         keyboardType: TextInputType.emailAddress,
                       ),
                       const SizedBox(height: 16),
-
                       TextFormField(
                         controller: passwordController,
                         obscureText: true,
@@ -83,11 +85,11 @@ class RegisterPage extends StatelessWidget {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+                          contentPadding: const EdgeInsets.symmetric(
+                              vertical: 16, horizontal: 20),
                         ),
                       ),
                       const SizedBox(height: 16),
-
                       TextFormField(
                         controller: confirmPasswordController,
                         obscureText: true,
@@ -97,20 +99,18 @@ class RegisterPage extends StatelessWidget {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+                          contentPadding: const EdgeInsets.symmetric(
+                              vertical: 16, horizontal: 20),
                         ),
                       ),
                       const SizedBox(height: 24),
-
                       const Text(
                         "Register with another social media account",
                         style: TextStyle(color: Colors.grey),
                       ),
                       const SizedBox(height: 8),
-
                       const SocialLoginButtons(),
                       const SizedBox(height: 24),
-
                       SizedBox(
                         width: double.infinity,
                         child: OutlinedButton(
@@ -119,7 +119,8 @@ class RegisterPage extends StatelessWidget {
                           },
                           style: OutlinedButton.styleFrom(
                             foregroundColor: Colors.green,
-                            side: const BorderSide(color: Colors.green, width: 2),
+                            side:
+                                const BorderSide(color: Colors.green, width: 2),
                             padding: const EdgeInsets.symmetric(vertical: 16),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),

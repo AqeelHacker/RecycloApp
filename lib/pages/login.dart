@@ -42,7 +42,8 @@ class _LoginPageState extends State<LoginPage> {
                 // Logo
                 Image.asset(
                   'assets/logo.png',
-                  height: 80,
+                  height: MediaQuery.of(context).size.height *
+                      0.08, // 8% dari tinggi layar
                 ),
                 const SizedBox(height: 100),
 
@@ -61,7 +62,8 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ],
                   ),
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                   child: Column(
                     children: [
                       const Text(
@@ -84,7 +86,8 @@ class _LoginPageState extends State<LoginPage> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+                          contentPadding: const EdgeInsets.symmetric(
+                              vertical: 16, horizontal: 20),
                         ),
                         keyboardType: TextInputType.emailAddress,
                       ),
@@ -100,7 +103,8 @@ class _LoginPageState extends State<LoginPage> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+                          contentPadding: const EdgeInsets.symmetric(
+                              vertical: 16, horizontal: 20),
                           suffixIcon: IconButton(
                             icon: Icon(
                               isPasswordVisible
@@ -137,7 +141,8 @@ class _LoginPageState extends State<LoginPage> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            backgroundColor: const Color.fromARGB(255, 42, 198, 99),
+                            backgroundColor:
+                                const Color.fromARGB(255, 42, 198, 99),
                           ),
                           child: const Text(
                             "Login",
@@ -156,7 +161,8 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         style: OutlinedButton.styleFrom(
                           foregroundColor: Colors.green,
-                          side: const BorderSide(color: Color.fromARGB(255, 42, 198, 99)),
+                          side: const BorderSide(
+                              color: Color.fromARGB(255, 42, 198, 99)),
                           minimumSize: const Size(double.infinity, 50),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),

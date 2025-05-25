@@ -57,7 +57,7 @@ class CoverPage extends StatelessWidget {
                 ),
                 const Spacer(flex: 2),
                 Image.asset(
-                  'assets/fortnite.png',
+                  'assets/cover.png',
                   height: 200,
                   fit: BoxFit.contain,
                 ),

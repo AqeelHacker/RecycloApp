@@ -16,7 +16,7 @@ class _TutorialPageState extends State<TutorialPage> {
       'title': 'Cara Memilah Sampah dengan Recyclo',
       'description':
           'Langkah pertama dalam menjaga lingkungan adalah memilah sampah dengan benar.\n\n1. Buka Recyclo dan pilih "Panduan Pemilahan Sampah".\n2. Lihat kategori seperti organik, plastik, kaca, dll.\n3. Ikuti tips dari Recyclo untuk memilah dengan benar.',
-      'image': 'assets/fortnite.png',
+      'image': 'assets/tutorial1.png',
       'button': 'Lanjut',
       'bgColor': const Color.fromARGB(255, 42, 198, 99),
     },
@@ -24,7 +24,7 @@ class _TutorialPageState extends State<TutorialPage> {
       'title': 'Temukan Lokasi Daur Ulang Terdekat',
       'description':
           'Recyclo bantu kamu cari lokasi daur ulang terdekat.\n\n1. Pilih "Peta Lokasi" dari menu utama.\n2. Izinkan akses lokasi.\n3. Dapatkan arah dan informasi tempat sampah terdekat.',
-      'image': 'assets/fortnite.png',
+      'image': 'assets/tutorial2.png',
       'button': 'Lanjut',
       'bgColor': const Color.fromARGB(255, 206, 154, 217),
     },
@@ -32,7 +32,7 @@ class _TutorialPageState extends State<TutorialPage> {
       'title': 'Penjemputan Sampah di Rumah',
       'description':
           'Tak sempat buang sampah?\n\n1Gunakan layanan penjemputan:\n\n1. Pilih "Penjemputan Sampah".\n2. Tentukan jenis & jadwal.\n3. Konfirmasi alamat & tunggu notifikasi.',
-      'image': 'assets/fortnite.png',
+      'image': 'assets/tutorial3.png',
       'button': 'Selesai',
       'bgColor': const Color.fromARGB(255, 220, 206, 139),
     },
