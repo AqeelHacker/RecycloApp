@@ -1,28 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:recyclo_app/widgets/social_login_button.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  bool isPasswordVisible = false;
-  String? emailError;
-
-  void validateEmail(String email) {
-    setState(() {
-      final emailRegExp = RegExp(r"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
-      emailError = emailRegExp.hasMatch(email) ? null : "Invalid email format";
-    });
-  }
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+    final TextEditingController confirmPasswordController = TextEditingController();
+
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -65,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     children: [
                       const Text(
-                        'Login to Recyclo',
+                        'Create Account',
                         style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.bold,
@@ -73,13 +60,10 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       const SizedBox(height: 32),
 
-                      // Email
-                      TextField(
+                      TextFormField(
                         controller: emailController,
-                        onChanged: validateEmail,
                         decoration: InputDecoration(
                           hintText: 'Email',
-                          errorText: emailError,
                           prefixIcon: const Icon(Icons.email_outlined),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
@@ -90,10 +74,9 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       const SizedBox(height: 16),
 
-                      // Password
-                      TextField(
+                      TextFormField(
                         controller: passwordController,
-                        obscureText: !isPasswordVisible,
+                        obscureText: true,
                         decoration: InputDecoration(
                           hintText: 'Password',
                           prefixIcon: const Icon(Icons.lock_outline),
@@ -101,24 +84,26 @@ class _LoginPageState extends State<LoginPage> {
                             borderRadius: BorderRadius.circular(12),
                           ),
                           contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              isPasswordVisible
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                isPasswordVisible = !isPasswordVisible;
-                              });
-                            },
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+
+                      TextFormField(
+                        controller: confirmPasswordController,
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          hintText: 'Confirm Password',
+                          prefixIcon: const Icon(Icons.lock_reset_outlined),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
                           ),
+                          contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
                         ),
                       ),
                       const SizedBox(height: 24),
 
                       const Text(
-                        'Login with another social media account',
+                        "Register with another social media account",
                         style: TextStyle(color: Colors.grey),
                       ),
                       const SizedBox(height: 8),
@@ -128,41 +113,24 @@ class _LoginPageState extends State<LoginPage> {
 
                       SizedBox(
                         width: double.infinity,
-                        child: ElevatedButton(
+                        child: OutlinedButton(
                           onPressed: () {
-                            debugPrint("Login clicked");
+                            Navigator.pushReplacementNamed(context, '/intro');
                           },
-                          style: ElevatedButton.styleFrom(
+                          style: OutlinedButton.styleFrom(
+                            foregroundColor: Colors.green,
+                            side: const BorderSide(color: Colors.green, width: 2),
                             padding: const EdgeInsets.symmetric(vertical: 16),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            backgroundColor: const Color.fromARGB(255, 42, 198, 99),
+                            backgroundColor: Colors.white,
                           ),
                           child: const Text(
-                            "Login",
-                            style: TextStyle(fontSize: 16, color: Colors.white),
+                            "Register",
+                            style: TextStyle(fontSize: 16, color: Colors.green),
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 16),
-
-                      const Text("Don’t have any account?"),
-                      const SizedBox(height: 8),
-
-                      OutlinedButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/register');
-                        },
-                        style: OutlinedButton.styleFrom(
-                          foregroundColor: Colors.green,
-                          side: const BorderSide(color: Color.fromARGB(255, 42, 198, 99)),
-                          minimumSize: const Size(double.infinity, 50),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                        child: const Text('Register'),
                       ),
                     ],
                   ),

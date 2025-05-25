@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:recyclo_app/pages/intro.dart';
+import 'package:recyclo_app/pages/register.dart';
+import 'package:recyclo_app/pages/tutorial.dart';
 import 'Pages/cover.dart';
 import 'Pages/login.dart';
 
@@ -18,6 +21,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const CoverPage(),
         '/login': (context) => const LoginPage(),
+        '/register': (context) => const RegisterPage(),
+        '/intro': (context) => const IntroPage(), 
+        '/tutorial': (context) => const TutorialPage(),
       },
     );
   }
